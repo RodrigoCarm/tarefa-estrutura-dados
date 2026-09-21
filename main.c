@@ -5,7 +5,7 @@
 void exibir_menu(void) {
     printf("\n=== CONTROLE DE ESTOQUE ===\n");
     printf("1 - Listar produtos\n");
-    printf("2 - Exibir valor total em estoque\n");
+    printf("2 - Exibir total em estoque (com tributos)\n");
     printf("0 - Sair\n");
     printf("Escolha uma opcao: ");
 }
@@ -22,7 +22,7 @@ float calcular_total(Produto lista[], int total) {
     for (int i = 0; i < total; i++) {
         soma += lista[i].preco * lista[i].quantidade;
     }
-    return soma * (1.0 + TAXA_PADRAO);
+    return soma + soma * TAXA_PADRAO;
 }
 
 int main(void) {
